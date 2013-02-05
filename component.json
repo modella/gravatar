@@ -1,0 +1,15 @@
+{
+  "name": "modella-gravatar",
+  "repo": "matthewmueller/modella-gravatar",
+  "description": "generate gravatars",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {
+    "enyo/md5": "*"
+  },
+  "development": {},
+  "license": "MIT",
+  "scripts": [
+    "index.js"
+  ]
+}

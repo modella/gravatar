@@ -1,0 +1,14 @@
+{
+  "name": "modella-gravatar",
+  "version": "0.0.1",
+  "description": "modella plugin for generating gravatars",
+  "keywords": [],
+  "author": "Matt Mueller <mattmuelle@gmail.com>",
+  "dependencies": {
+    "md5" : "*"
+  },
+  "devDependencies" : {
+    "modella" : "*"
+  },
+  "main": "index"
+}
