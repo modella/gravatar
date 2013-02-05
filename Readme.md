@@ -1,9 +1,30 @@
 
 # modella-gravatar
 
-  modella plugin for generating gravatars
+  modella plugin for generating gravatars for node.js and browser
 
-## License 
+## Example
+
+```js
+var User = model('user')
+  .attr('name')
+  .attr('email')
+  .attr('password');
+
+User.use(gravatar('email'));
+
+var user = new User({
+  name : 'matt',
+  email : 'mattmuelle@gmail.com',
+  password : 'test'
+});
+
+user.save(function(err) {
+  console.log(user.gravatar());
+});
+```
+
+## License
 
 (The MIT License)
 
