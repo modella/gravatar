@@ -1,7 +1,16 @@
+# gravatar
 
-# modella-gravatar
+  modella plugin for generating gravatars for node.js and browser.
+  
+## Installation
 
-  modella plugin for generating gravatars for node.js and browser
+In the browser (using component):
+
+    component install modella/gravatar
+    
+On the server:
+
+    npm install modella-gravatar
 
 ## Example
 
