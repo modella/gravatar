@@ -21,7 +21,7 @@ module.exports = function(prop, attr) {
   return function(model) {
     model.attr(attr, { type : 'string' });
     model.on('saving', function(obj, fn) {
-      if(obj[attr]()) return;
+      if(obj[attr]()) return fn();
       var email = obj[prop]();
       obj[attr](url(email));
       fn();
