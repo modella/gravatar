@@ -1,13 +1,13 @@
 # gravatar
 
   modella plugin for generating gravatars for node.js and browser.
-  
+
 ## Installation
 
 In the browser (using component):
 
     component install modella/gravatar
-    
+
 On the server:
 
     npm install modella-gravatar
@@ -20,7 +20,7 @@ var User = model('user')
   .attr('email')
   .attr('password');
 
-User.use(gravatar('email'));
+User.use(gravatar('email', 'avatar'));
 
 var user = new User({
   name : 'matt',
@@ -29,7 +29,7 @@ var user = new User({
 });
 
 user.save(function(err) {
-  console.log(user.gravatar());
+  console.log(user.avatar());
 });
 ```
 
