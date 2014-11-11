@@ -2,7 +2,7 @@
   "name": "modella-gravatar",
   "repo": "matthewmueller/modella-gravatar",
   "description": "generate gravatars",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "keywords": [],
   "dependencies": {
     "enyo/md5": "*"
