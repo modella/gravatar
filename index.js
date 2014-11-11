@@ -14,13 +14,17 @@ md5 = (md5.digest_s) ? md5.digest_s : md5;
  * Export plugin
  */
 
-module.exports = function(attr) {
+module.exports = function(prop, attr) {
+  prop = prop || 'email';
+  attr = attr || 'gravatar';
+
   return function(model) {
-    model.attr('gravatar', { type : 'string' });
-    model.on('saving', function(obj) {
-      if(!obj.isNew()) return;
-      var email = obj[attr]();
-      obj.gravatar(url(email));
+    model.attr(attr, { type : 'string' });
+    model.on('saving', function(obj, fn) {
+      if(obj[attr]()) return;
+      var email = obj[prop]();
+      obj[attr](url(email));
+      fn();
     });
   };
 };
