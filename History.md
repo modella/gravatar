@@ -1,4 +1,10 @@
 
+0.0.5 / 2014-12-10
+==================
+
+  * Merge pull request #1 from bdentino/master
+  * Added support for default gravatar selection options
+
 0.0.4 / 2014-11-10
 ==================
 
