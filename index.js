@@ -14,7 +14,7 @@ md5 = (md5.digest_s) ? md5.digest_s : md5;
  * Export plugin
  */
 
-module.exports = function(prop, attr) {
+module.exports = function(prop, attr, defaultAvatar) {
   prop = prop || 'email';
   attr = attr || 'gravatar';
 
@@ -23,7 +23,7 @@ module.exports = function(prop, attr) {
     model.on('saving', function(obj, fn) {
       if(obj[attr]()) return fn();
       var email = obj[prop]();
-      obj[attr](url(email));
+      obj[attr](url(email, defaultAvatar));
       fn();
     });
   };
@@ -36,6 +36,8 @@ module.exports = function(prop, attr) {
  * @return {String} url
  */
 
-function url(email) {
-  return 'https://secure.gravatar.com/avatar/' + md5(email);
+function url(email, defaultAvatar) {
+  if (defaultAvatar) defaultAvatar = 'd=' + defaultAvatar;
+  defaultAvatar = defaultAvatar || ''
+  return 'https://secure.gravatar.com/avatar/' + md5(email) + '?' + defaultAvatar;
 }
